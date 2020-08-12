@@ -29,7 +29,7 @@ class Solution:
         return result_start
 
 class TestAddTwoNumbers(unittest.TestCase):
-    def test_two_sum(self):
+    def test_run(self):
         test_cases = []
         test_cases.append((
             ListNode(2, ListNode(4, ListNode(3))), 
