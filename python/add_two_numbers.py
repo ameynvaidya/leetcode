@@ -1,4 +1,4 @@
-from single_linked_list import ListNode
+from linked_list.single_linked_list import ListNode
 import unittest
 
 '''

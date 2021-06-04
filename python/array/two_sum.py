@@ -14,13 +14,13 @@ return [0, 1].
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        table = {}
-        for index, value  in enumerate(nums):
-            complement = target - value
-            if complement in table:
-                return [index, table[complement]]
+        nums_map = {}
+        for index, value in enumerate(nums):
+            delta = target - value
+            if delta in nums_map:
+                return [nums_map[delta], index]
             else:
-                table[value] = index
+                nums_map[value] = index
         return []
 
 class TestTwoSum(unittest.TestCase):
@@ -34,7 +34,7 @@ class TestTwoSum(unittest.TestCase):
             with self.subTest(nums):
                 s = Solution()
                 actual_list = s.twoSum(nums, target)
-                self.assertEqual(actual_list.sort(), expected_list.sort())
+                self.assertEqual(actual_list, expected_list)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
