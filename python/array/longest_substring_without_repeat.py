@@ -26,25 +26,11 @@ class Solution:
         start_index = 0
         for i,c in enumerate(s):
             if c in word_map and word_map[c] >= start_index:
-                start_index = word_map[c] + 1
+               start_index = word_map[c] + 1
             word_map[c] = i
-            max_count = max([i - start_index + 1, max_count])
+            max_count = max(max_count, i - start_index + 1)
         return max_count
 
-class TestLengthOfLongestSubstring(unittest.TestCase):
-    def test_run(self):
-        test_cases = []
-        test_cases.append(("abcabcabc",  3))
-        test_cases.append(("",  0))
-        test_cases.append(("aaaaaa",  1))
-        test_cases.append(("pwwkew",  3))
-        test_cases.append(("aaaaabcadefg",  7))
-        for test_case in test_cases:
-            input_string, expected_count = test_case
-            with self.subTest(input_string):
-                s = Solution()
-                actual_ans = s.lengthOfLongestSubstring(input_string)
-                self.assertEqual(actual_ans, expected_count)
-
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
+s = Solution()
+inp = "abba"
+print(s.lengthOfLongestSubstring(inp))
