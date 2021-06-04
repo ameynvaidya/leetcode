@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 from typing import List
-import unittest
 
 '''
 https://leetcode.com/problems/3sum/
